@@ -51,6 +51,5 @@ public extension SettingsView {
             .background(.primary)
             .frame(width: 500)
         }
-        .navigationTitle("Xcode Debugger Settings")
     }
 }

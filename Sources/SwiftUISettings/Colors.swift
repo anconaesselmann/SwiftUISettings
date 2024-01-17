@@ -3,9 +3,6 @@
 
 import SwiftUI
 
-#if os(macOS)
-import AppKit
-
 struct Colors {
     enum Text: String {
         case `default` = "text.default"
@@ -24,6 +21,19 @@ struct Colors {
     }
 }
 
+extension View {
+    func foregroundColor(_ color: Colors.Text) -> some View {
+        foregroundColor(Color(color.rawValue))
+    }
+
+    func background(_ color: Colors.Background) -> some View {
+        return background(Color(color.rawValue))
+    }
+}
+
+#if os(macOS)
+import AppKit
+
 extension Color {
     struct Border {
         static var highlight = Color(NSColor(named: Colors.Border.highlight.rawValue, bundle: Bundle.module)!)
@@ -39,20 +49,21 @@ extension Color {
     }
 }
 
-extension View {
-    func foregroundColor(_ color: Colors.Text) -> some View {
-        foregroundColor(Color(color.rawValue))
-    }
-
-    func background(_ color: Colors.Background) -> some View {
-        return background(Color(color.rawValue))
-    }
-}
-
-
-
 #else
 import UIKit
 
-//static let activeTab: Color = Color(UIColor(named: "activeTab", in: .module, compatibleWith: nil)!)
+extension Color {
+    struct Border {
+        static var highlight = Color(UIColor(named: Colors.Border.highlight.rawValue, in: .module, compatibleWith: nil)!)
+    }
+    struct Text {
+        static var `default` = Color(UIColor(named: Colors.Text.default.rawValue, in: .module, compatibleWith: nil)!)
+        static var secondary = Color(UIColor(named: Colors.Text.secondary.rawValue, in: .module, compatibleWith: nil)!)
+        static var tertiary = Color(UIColor(named: Colors.Text.tertiary.rawValue, in: .module, compatibleWith: nil)!)
+    }
+    struct Background {
+        static var highlight = Color(UIColor(named: Colors.Background.highlight.rawValue, in: .module, compatibleWith: nil)!)
+        static var secondary = Color(UIColor(named: Colors.Background.secondary.rawValue, in: .module, compatibleWith: nil)!)
+    }
+}
 #endif

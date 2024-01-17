@@ -20,6 +20,10 @@ public protocol SettingsViewModel: ObservableObject
     var availableSettings: [Path] { get }
     var preferences: UserPreferences<StorageKey> { get }
 
+    #if os(iOS)
+    var selection: Path? { get set }
+    #endif
+
     static var settingsPathKey: StorageKey { get }
 }
 

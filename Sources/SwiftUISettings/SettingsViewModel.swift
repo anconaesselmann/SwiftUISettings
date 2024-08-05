@@ -13,7 +13,7 @@ public protocol SettingsViewModel: ObservableObject
         where Path: SettingsPath,
               Path: Hashable
     associatedtype StorageKey
-        where StorageKey: PreferenceKey
+        where StorageKey: UserPreferenceKey, StorageKey.RawValue == String
 
 
     var navStack: [Path] { get set }

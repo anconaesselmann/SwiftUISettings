@@ -2,9 +2,8 @@
 //
 
 import SwiftUI
-import UserPreferences
 
-public protocol SettingsPath: CaseIterable, PreferenceValue
+public protocol SettingsPath: CaseIterable, Codable, Equatable
     where AllCases.Index == Int
 {
     var title: String { get }

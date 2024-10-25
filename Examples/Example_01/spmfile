@@ -1,0 +1,20 @@
+{
+  "info": "This file is used to manage swift packages through the command line. For more info visit https://github.com/anconaesselmann/CLSPM",
+  "dependencies" : [
+    {
+      "id": "7511C78B-039E-430F-A0E2-62AE9BFCD44E",
+      "name": "SwiftUISettings",
+      "local_path" : "../../",
+      "use_local" : true
+    }
+  ],
+  "targets" : [
+    {
+      "dependencies" : [
+        "SwiftUISettings"
+      ],
+      "id" : "15E3CCAE-28DD-474B-A4B4-6C9C7414D50F",
+      "name" : "Example_01"
+    }
+  ]
+}

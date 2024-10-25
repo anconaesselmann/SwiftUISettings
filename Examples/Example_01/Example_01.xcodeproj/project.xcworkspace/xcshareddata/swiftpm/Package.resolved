@@ -1,0 +1,15 @@
+{
+  "originHash" : "47d6e0c9593ec9a5e5e64d4a34a744503316eda43538d7b7c649e084ddf45648",
+  "pins" : [
+    {
+      "identity" : "userpreferences",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/anconaesselmann/UserPreferences",
+      "state" : {
+        "revision" : "0589764bd54d912a942438d91dc9efa2bb34b407",
+        "version" : "1.0.2"
+      }
+    }
+  ],
+  "version" : 3
+}
